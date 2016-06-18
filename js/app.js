@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 
 // print background based on text entered.
 // text must be the name of a city.
@@ -12,7 +12,7 @@ function changeBackground(event) {
  
   event.preventDefault();
  
-  //text entry
+  //text entry - basically tells js to read what is in the input box (class of 'city-type')
   var city = $("#city-type").val();
   
   //match entry with proper css class (name of city)
@@ -33,8 +33,12 @@ function changeBackground(event) {
       $("body").attr("class", "austin");
   }
   
-  else if(city === "sydney" || city === "SYD" || city === "Sydney" || city === "syd"){
+  else if(city === "SYD" || city === "sydney" || city === "Sydney" || city === "syd"){
       $("body").attr("class", "sydney");
+  }
+  // changes to default background images if input does not match any other city
+  else{
+      $("body").attr("class", "");
   }
  
  
